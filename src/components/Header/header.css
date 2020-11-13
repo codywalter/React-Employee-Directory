@@ -1,0 +1,12 @@
+header {
+  position: relative;
+  background-image: linear-gradient(to right, lightslategrey, lightblue);
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
