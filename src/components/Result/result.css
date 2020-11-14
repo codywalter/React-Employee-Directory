@@ -4,12 +4,12 @@
   color: rgb(13, 44, 113);
 }
 
-#col {
+.column {
   font-size: 25px;
   text-align: left;
 }
 
-#row {
+.row {
   text-align: left;
   font-size: 18px;
   padding: 8px;

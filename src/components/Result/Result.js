@@ -1,38 +1,50 @@
 import React from "react";
 import employees from "./employees.json";
+import BootstrapTable from "react-bootstrap-table-next";
+import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import "./result.css";
-import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
+const { SearchBar } = Search;
+let columns = [
+  {
+    dataField: "first_name",
+    text: "First Name",
+    sort: true,
+  },
+  {
+    dataField: "last_name",
+    text: "Last Name",
+    sort: true,
+  },
+  {
+    dataField: "job_title",
+    text: "Job Title",
+    sort: true,
+  },
+  {
+    dataField: "email",
+    text: "Email",
+    sort: true,
+  },
+];
 
 class Result extends React.Component {
   render() {
     return (
-      <div>
-        <BootstrapTable
-          ref="table"
-          data={employees}
-          multiColumnSort={2}
-          search={true}
-        >
-          <TableHeaderColumn
-            dataField="first_name"
-            isKey={true}
-            dataSort={true}
-          >
-            First Name
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField="last_name" dataSort={true}>
-            Last Name
-          </TableHeaderColumn>
-
-          <TableHeaderColumn dataField="job_title" dataSort={true}>
-            Job Title
-          </TableHeaderColumn>
-
-          <TableHeaderColumn dataField="email" dataSort={true}>
-            Email
-          </TableHeaderColumn>
-        </BootstrapTable>
-      </div>
+      <ToolkitProvider keyField="id" data={employees} columns={columns} search>
+        {(props) => (
+          <div>
+            <SearchBar {...props.searchProps} />
+            <BootstrapTable
+              {...props.baseProps}
+              data={employees}
+              multiColumnSort={2}
+              keyField="id"
+              isSearch={true}
+              columns={columns}
+            ></BootstrapTable>
+          </div>
+        )}
+      </ToolkitProvider>
     );
   }
 }
