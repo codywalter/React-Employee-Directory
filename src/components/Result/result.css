@@ -3,7 +3,9 @@
     "Lucida Sans", Arial, sans-serif;
   color: rgb(13, 44, 113);
 }
-
+.search {
+  padding: 20px;
+}
 .column {
   font-size: 25px;
   text-align: left;

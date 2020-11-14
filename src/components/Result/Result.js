@@ -2,7 +2,7 @@ import React from "react";
 import employees from "./employees.json";
 import BootstrapTable from "react-bootstrap-table-next";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
-import "./result.css";
+import "../../index.css";
 const { SearchBar } = Search;
 let columns = [
   {
@@ -33,7 +33,7 @@ class Result extends React.Component {
       <ToolkitProvider keyField="id" data={employees} columns={columns} search>
         {(props) => (
           <div>
-            <SearchBar {...props.searchProps} />
+            <SearchBar {...props.searchProps} className="search" />
             <BootstrapTable
               {...props.baseProps}
               data={employees}
