@@ -30,7 +30,7 @@ None
 
 ## Demo
 
-![Example of Applications]()
+![Example of Applications](./employee-directory.png)
 
 ## Contributors
 
@@ -44,6 +44,6 @@ None
 
 ## View the project repository in GitHub at: https://github.com/codywalter/React-Employee-Directory
 
-## View deployed site at:
+## View deployed site at: https://codywalter.github.io/React-Employee-Directory/
 
 ### If you have any questions, contact the author directly at: cody.walter@providencecc.edu
